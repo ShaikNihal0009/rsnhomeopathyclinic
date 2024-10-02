@@ -8,11 +8,7 @@
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <!-- Replace 'logo.png' with the name of your logo file -->
-            <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Clinic Logo" class="logo">
-            <h1>R.S.N Homeopathy Clinic</h1>
-        </div>
+        <h1>R.S.N Homeopathy Clinic</h1>
         <nav>
             <ul>
                 <li><a href="#" onclick="showSection('home')">Home</a></li>
@@ -25,6 +21,11 @@
     <section id="home">
         <h2>Your Health, Our Priority</h2>
         <p>Providing quality homeopathic treatments to improve your well-being.</p>
+        <!-- Image slideshow -->
+        <div class="slideshow">
+            <img src="image1.jpg" alt="First Image" class="slideshow-img">
+            <img src="image2.jpg" alt="Second Image" class="slideshow-img" style="display:none;">
+        </div>
     </section>
 
     <section id="services">
@@ -57,6 +58,16 @@
             // Show the selected section
             document.getElementById(sectionId).style.display = 'block';
         }
+
+        // Slideshow logic
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.slideshow-img');
+        
+        setInterval(() => {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = 'block';
+        }, 10000); // 10 seconds per image
     </script>
 </body>
 </html>
