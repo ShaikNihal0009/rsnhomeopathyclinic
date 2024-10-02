@@ -77,3 +77,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    
+    nav ul li {
+        margin: 0; /* Remove side margin on small screens */
+        width: 100%; /* Make items full width */
+    }
+
+    nav ul li a {
+        display: block; /* Make the entire area clickable */
+        text-align: center; /* Center text */
+    }
+}
+
