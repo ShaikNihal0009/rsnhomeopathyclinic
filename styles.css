@@ -13,25 +13,27 @@ header {
     text-align: center;
 }
 
+nav {
+    background-color: #333;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    text-align: center;
+    display: flex; /* Use flexbox for the navigation */
+    justify-content: center; /* Center the items */
+    flex-wrap: wrap; /* Allow wrapping of items */
 }
 
 nav ul li {
-    display: inline-block; /* Use inline-block to avoid overlapping */
-    margin: 0 15px; /* Add space between menu items */
+    margin: 5px; /* Add margin for spacing */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 14px 25px; /* Adjust padding for better spacing */
-    display: block; /* Make the entire link area clickable */
+    padding: 14px 20px;
 }
 
 nav ul li a:hover {
@@ -56,4 +58,21 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    
+    nav ul li {
+        margin: 0; /* Remove side margin on small screens */
+        width: 100%; /* Make items full width */
+    }
+
+    nav ul li a {
+        display: block; /* Make the entire area clickable */
+        text-align: center; /* Center text */
+    }
 }
