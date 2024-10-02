@@ -13,13 +13,17 @@ header {
     text-align: center;
 }
 
+nav {
+    background-color: #ADD8E6; /* Light blue background */
+    padding: 1rem;
+    text-align: center;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-    text-align: center;
 }
 
 nav ul li {
@@ -59,11 +63,6 @@ section {
     width: 100%;
     max-width: 600px; /* Restrict image width */
     height: auto; /* Maintain the aspect ratio */
-}
-
-/* Show only the first image initially */
-.slideshow-img:first-child {
-    display: block;
 }
 
 footer {
