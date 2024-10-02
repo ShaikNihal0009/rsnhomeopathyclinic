@@ -24,7 +24,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 30px;
 }
 
 nav ul li a {
@@ -44,7 +44,26 @@ section {
 }
 
 #home {
-    display: block; /* Only show the home section initially */
+    display: block; /* Show only the home section initially */
+}
+
+/* Slideshow styles */
+.slideshow {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.slideshow-img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+/* Show only the first image initially */
+.slideshow-img:first-child {
+    display: block;
 }
 
 footer {
