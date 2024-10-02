@@ -1,63 +1,64 @@
-/* Basic styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.S.N Homeopathy Clinic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to R.S.N Homeopathy Clinic</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('about')">About Us</a></li>
+                <li><a href="#" onclick="showSection('services')">Services</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
+    <section id="home">
+        <h2>Your Health, Our Priority</h2>
+        <p>Providing quality homeopathic treatments to improve your well-being.</p>
+    </section>
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    text-align: center;
-}
+    <section id="about">
+        <h2>About Us</h2>
+        <p>R.S.N Homeopathy Clinic has been serving patients for over 20 years. Our approach focuses on natural healing and personalized care.</p>
+    </section>
 
-nav ul li {
-    display: inline; /* Keeps items on the same line */
-    margin: 0 30px; /* Increased margin for more space between menu items */
-}
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>General Health Check-ups</li>
+            <li>Chronic Disease Management</li>
+            <li>Homeopathic Consultations</li>
+            <li>Pediatric Homeopathy</li>
+        </ul>
+    </section>
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-}
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@rsnhomeopathy.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>Address: 123 Health Avenue, City, Country</p>
+    </section>
 
-nav ul li a:hover {
-    background-color: #ddd;
-    color: black;
-}
+    <footer>
+        <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
+    </footer>
 
-section {
-    padding: 20px;
-    display: none; /* Hide all sections initially */
-}
-
-#home {
-    display: block; /* Only show the home section initially */
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Add spacing to the navigation bar to avoid overlap with the selected item */
-nav {
-    margin-bottom: 20px; /* Add margin to separate the nav from the sections */
-}
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
