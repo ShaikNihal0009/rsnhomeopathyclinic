@@ -13,28 +13,30 @@ header {
     text-align: center;
 }
 
+/* Vertical Navigation Menu */
 nav {
     background-color: #ADD8E6; /* Light blue background */
     padding: 1rem;
-    text-align: center;
+    width: 200px;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 30px;
+    margin-bottom: 10px;
 }
 
 nav ul li a {
+    display: block;
     color: white;
+    background-color: #333;
     text-decoration: none;
-    padding: 14px 20px;
+    padding: 10px;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -44,6 +46,7 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
+    margin-left: 220px; /* To offset the section from the vertical menu */
     display: none; /* Hide all sections initially */
 }
 
@@ -54,15 +57,15 @@ section {
 /* Slideshow styles */
 .slideshow {
     width: 100%;
-    max-width: 600px; /* You can adjust this value to make the slideshow narrower */
+    max-width: 600px; /* Restrict width of the slideshow */
     margin: 20px auto;
     position: relative;
 }
 
 .slideshow-img {
     width: 100%;
-    max-width: 600px; /* Restrict image width */
-    height: auto; /* Maintain the aspect ratio */
+    max-width: 600px; /* Restrict width of the images */
+    height: auto;
 }
 
 footer {
