@@ -50,15 +50,15 @@ section {
 /* Slideshow styles */
 .slideshow {
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* You can adjust this value to make the slideshow narrower */
     margin: 20px auto;
     position: relative;
 }
 
 .slideshow-img {
     width: 100%;
-    height: auto;
-    display: none;
+    max-width: 600px; /* Restrict image width */
+    height: auto; /* Maintain the aspect ratio */
 }
 
 /* Show only the first image initially */
