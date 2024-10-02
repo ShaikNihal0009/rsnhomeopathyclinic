@@ -17,26 +17,27 @@ header {
 nav {
     background-color: #ADD8E6; /* Light blue background */
     padding: 1rem;
-    width: 200px;
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: left; /* Align text to the left */
 }
 
 nav ul li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space between menu items */
 }
 
 nav ul li a {
-    display: block; /* Ensure each link takes the full width */
+    display: block; /* Each link takes full width */
     color: white;
     background-color: #333;
     text-decoration: none;
     padding: 10px;
-    text-align: center;
 }
 
 nav ul li a:hover {
@@ -46,7 +47,7 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    margin-left: 220px; /* To offset the section from the vertical menu */
+    margin-left: 20px; /* Offset the section from the vertical menu */
     display: none; /* Hide all sections initially */
 }
 
