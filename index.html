@@ -11,7 +11,64 @@
         <h1>R.S.N Homeopathy Clinic</h1>
     </header>
 
-    <!-- Navigation menu in vertical layout -->
+    <!-- Vertical Navigation Menu -->
     <nav>
         <ul>
-            <li><a href="#" onclick="showSection
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('services')">Services</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>Your Health, Our Priority</h2>
+        <p>Providing quality homeopathic treatments to improve your well-being.</p>
+        <div class="slideshow">
+            <img src="image1.jpg" alt="First Image" class="slideshow-img">
+            <img src="image2.jpg" alt="Second Image" class="slideshow-img" style="display:none;">
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>General Health Check-ups</li>
+            <li>Chronic Disease Management</li>
+            <li>Homeopathic Consultations</li>
+            <li>Pediatric Homeopathy</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@rsnhomeopathy.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>Address: 123 Health Avenue, City, Country</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Slideshow logic
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.slideshow-img');
+        
+        setInterval(() => {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = 'block';
+        }, 10000); // 10 seconds per image
+    </script>
+</body>
+</html>
