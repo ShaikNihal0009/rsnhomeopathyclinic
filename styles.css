@@ -23,7 +23,7 @@ nav ul {
     padding: 0;
     display: flex; /* Use flexbox for the navigation */
     justify-content: center; /* Center the items */
-    flex-wrap: wrap; /* Allow wrapping of items */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
 }
 
 nav ul li {
