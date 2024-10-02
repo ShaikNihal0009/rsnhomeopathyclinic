@@ -23,8 +23,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline; /* Keeps items on the same line */
+    margin: 0 30px; /* Increased margin for more space between menu items */
 }
 
 nav ul li a {
@@ -55,4 +55,9 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Add spacing to the navigation bar to avoid overlap with the selected item */
+nav {
+    margin-bottom: 20px; /* Add margin to separate the nav from the sections */
 }
