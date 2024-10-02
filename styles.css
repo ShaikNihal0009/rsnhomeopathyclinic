@@ -19,18 +19,19 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    display: flex; /* Use flexbox for the navigation */
-    justify-content: center; /* Center the items */
+    text-align: center;
 }
 
 nav ul li {
+    display: inline-block; /* Use inline-block to avoid overlapping */
     margin: 0 15px; /* Add space between menu items */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 14px 20px;
+    padding: 14px 25px; /* Adjust padding for better spacing */
+    display: block; /* Make the entire link area clickable */
 }
 
 nav ul li a:hover {
