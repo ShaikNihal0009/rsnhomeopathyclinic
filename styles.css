@@ -3,79 +3,81 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #4CAF50;
-    padding: 1rem;
-    position: relative;
+    background-color: #4CAF50; /* Green background */
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
 }
 
 .header-content {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .clinic-logo {
-    border-radius: 50%;
-    height: 80px;
     width: 80px;
+    height: 80px;
+    border-radius: 50%;
     margin-right: 20px;
 }
 
-.clinic-name {
+.clinic-info h3 {
     font-size: 24px;
-    color: white;
+    margin: 0;
 }
 
-.doctor-info {
+.doctor-info h3 {
+    font-size: 18px;
+    margin: 0;
     text-align: right;
-    color: white;
-    font-size: 16px;
+}
+
+.doctor-info p {
+    font-size: 14px;
+    margin: 0;
+    text-align: right;
 }
 
 nav {
-    background-color: #ADD8E6;
-    padding: 15px 0;
+    background-color: #333;
+    overflow: hidden;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
     margin: 0;
-    text-align: left;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 10px 0;
+    display: inline;
 }
 
 nav ul li a {
     display: block;
-    padding: 10px;
-    background-color: #333;
     color: white;
-    text-decoration: none;
     text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #ddd;
+    color: black;
 }
 
-section {
+section.hero {
     padding: 20px;
-    display: none; /* Hide all sections initially */
-}
-
-#home {
-    display: block; /* Show the home section by default */
+    text-align: center;
 }
 
 footer {
@@ -84,6 +86,6 @@ footer {
     text-align: center;
     padding: 10px;
     position: fixed;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
 }
