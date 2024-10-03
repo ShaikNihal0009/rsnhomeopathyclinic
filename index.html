@@ -9,19 +9,10 @@
 <body onload="showSection('home')">
     <header>
         <div class="header-container">
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger" onclick="toggleHamburgerMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            
-            <!-- Logo and Clinic Name -->
-            <img src="logo.png" alt="Clinic Logo" class="logo">
+            <span class="hamburger">&#9776;</span> <!-- Hamburger Icon -->
+            <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Clinic Logo" class="logo">
             <h2>R.S.N Homeopathy Clinic</h2>
         </div>
-
-        <!-- Existing Menu -->
         <nav>
             <ul>
                 <li><a href="#" onclick="showSection('home')">Home</a></li>
@@ -31,21 +22,7 @@
         </nav>
     </header>
 
-    <!-- Hamburger Menu Dropdown -->
-    <nav id="hamburgerMenu" class="hamburger-menu" style="display: none;">
-        <ul>
-            <li><a href="#" onclick="showSection('about')">About Us</a></li>
-            <li>
-                <!-- Instagram Image Link -->
-                <a href="https://instagram.com" target="_blank">
-                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-            </li>
-        </ul>
-    </nav>
-
     <main>
-        <!-- Home Section -->
         <section id="home" class="intro">
             <h1>Your Health, Our Priority</h1>
             <p>Providing quality homeopathic treatments to improve your well-being.</p>
@@ -60,7 +37,7 @@
             <h2>Our Services</h2>
             <div class="services-container">
                 <div class="service-card">
-                    <img src="homeopathy-icon.png" alt="Homeopathy Consultation">
+                    <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Homeopathy Consultation">
                     <h3>Homeopathy Consultation</h3>
                     <p>Personalized homeopathic remedies to suit your specific health needs.</p>
                 </div>
@@ -86,40 +63,20 @@
             <p><strong>Address:</strong> 123 Wellness Street, Health City, HC 45678</p>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" style="display:none;">
-            <h2>About Us</h2>
-            <p>Welcome to R.S.N Homeopathy Clinic. We are committed to providing personalized and natural treatments to ensure your optimal health and well-being.</p>
-        </section>
+        <!-- About Us & Social Media in Hamburger Menu -->
+        <div class="hamburger-menu">
+            <span class="close">&times;</span> <!-- X symbol to close -->
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="https://instagram.com" target="_blank"><img src="instagram.png" alt="Instagram" class="social-icon"></a></li>
+            </ul>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
 
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        function toggleHamburgerMenu() {
-            const menu = document.getElementById('hamburgerMenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-
-        let currentImage = 0;
-        const images = document.querySelectorAll('.slideshow-image');
-        setInterval(() => {
-            images[currentImage].style.display = 'none';
-            currentImage = (currentImage + 1) % images.length;
-            images[currentImage].style.display = 'block';
-        }, 10000);
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            const menu = document.querySelector('.hamburger-menu');
-            menu.classList.toggle('open'); // Toggle the 'open' class to show/hide the menu
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
