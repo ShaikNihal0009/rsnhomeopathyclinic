@@ -8,10 +8,12 @@
 </head>
 <body>
     <header>
-        <h1>R.S.N Homeopathy Clinic</h1>
+        <div class="logo-container">
+            <img src="IMG_1671.jpeg" alt="Clinic Logo" class="logo">
+            <h1>R.S.N Homeopathy Clinic</h1>
+        </div>
     </header>
 
-    <!-- Vertical Navigation Menu -->
     <nav>
         <ul>
             <li><a href="#" onclick="showSection('home')">Home</a></li>
@@ -24,8 +26,8 @@
         <h2>Your Health, Our Priority</h2>
         <p>Providing quality homeopathic treatments to improve your well-being.</p>
         <div class="slideshow">
-            <img src="image1.jpg" alt="First Image" class="slideshow-img">
-            <img src="image2.jpg" alt="Second Image" class="slideshow-img" style="display:none;">
+            <img src="image1.jpg" alt="First Image" class="slideshow-image">
+            <img src="image2.jpg" alt="Second Image" class="slideshow-image">
         </div>
     </section>
 
@@ -52,23 +54,18 @@
 
     <script>
         function showSection(sectionId) {
-            // Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.style.display = 'none');
-            
-            // Show the selected section
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        // Slideshow logic
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll('.slideshow-img');
-        
+        let currentImage = 0;
+        const images = document.querySelectorAll('.slideshow-image');
         setInterval(() => {
-            images[currentImageIndex].style.display = 'none';
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            images[currentImageIndex].style.display = 'block';
-        }, 10000); // 10 seconds per image
+            images[currentImage].style.display = 'none';
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].style.display = 'block';
+        }, 10000);
     </script>
 </body>
 </html>
