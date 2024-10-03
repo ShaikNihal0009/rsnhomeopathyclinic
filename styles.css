@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -29,6 +28,14 @@ header {
     height: 50px;
 }
 
+.doctor-info {
+    text-align: right;
+}
+
+.doctor-info p {
+    margin: 5px 0;
+}
+
 /* Navigation */
 nav ul {
     list-style: none;
@@ -53,7 +60,7 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Home Section Styles */
+/* Main Section */
 .intro {
     padding: 50px 20px;
     text-align: center;
@@ -67,42 +74,6 @@ nav ul li a:hover {
 .intro p {
     font-size: 18px;
     color: #666;
-}
-
-/* Slideshow in Card */
-.service-card {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 400px; /* Adjust the card width */
-    text-align: center;
-    border-radius: 10px;
-}
-
-.service-card h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #4CAF50;
-}
-
-.slideshow {
-    position: relative;
-    width: 100%;
-    height: 250px; /* Set height of the slideshow */
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.slideshow-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fits nicely inside */
-    display: none;
-}
-
-.slideshow-image:first-child {
-    display: block;
 }
 
 /* Services Section */
@@ -154,22 +125,6 @@ nav ul li a:hover {
 .service-card p {
     font-size: 16px;
     color: #555;
-}
-
-/* Contact Section */
-#contact {
-    background-color: #f4f4f9;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#contact p {
-    font-size: 18px;
-    color: #555;
-}
-
-#contact strong {
-    font-size: 18px;
 }
 
 /* Footer Styles */
