@@ -9,8 +9,8 @@
 <body onload="showSection('home')">
     <header>
         <div class="header-container">
-            <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Clinic Logo" class="logo">
-            <h2>R.S.N Homeopathy Clinic</h2>
+            <img src="logo.png" alt="Clinic Logo" class="logo">
+            <h3>R.S.N Homeopathy Clinic</h3>
         </div>
         <nav>
             <ul>
@@ -25,9 +25,14 @@
         <section id="home" class="intro">
             <h1>Your Health, Our Priority</h1>
             <p>Providing quality homeopathic treatments to improve your well-being.</p>
-            <div class="slideshow">
-                <img src="" alt="First Image" class="slideshow-image">
-                <img src="" alt="Second Image" class="slideshow-image">
+
+            <!-- Slideshow in a Card -->
+            <div class="card">
+                <h2>Clinic Highlights</h2>
+                <div class="slideshow">
+                    <img src="image1.jpg" alt="First Image" class="slideshow-image">
+                    <img src="image2.jpg" alt="Second Image" class="slideshow-image">
+                </div>
             </div>
         </section>
 
@@ -66,26 +71,21 @@
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
-<script>
+
+    <script>
         function showSection(sectionId) {
-            // Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.style.display = 'none');
-            
-            // Show the selected section
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        // Slideshow logic
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll('.slideshow-img');
-        
+        let currentImage = 0;
+        const images = document.querySelectorAll('.slideshow-image');
         setInterval(() => {
-            images[currentImageIndex].style.display = 'none';
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            images[currentImageIndex].style.display = 'block';
-        }, 10000); // 10 seconds per image
+            images[currentImage].style.display = 'none';
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].style.display = 'block';
+        }, 5000); // Slide every 5 seconds
     </script>
-    
 </body>
 </html>
