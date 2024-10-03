@@ -17,6 +17,7 @@ header {
     color: white;
     padding: 10px 0;
     text-align: center;
+    position: relative; /* Added relative positioning */
 }
 
 .header-container {
@@ -64,10 +65,13 @@ nav ul li a:hover {
 
 /* Hamburger Menu Styles */
 .hamburger {
+    position: absolute; /* Positioned absolutely */
+    left: 20px; /* Positioned on the extreme left */
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin-right: auto; /* Aligns the hamburger to the left */
 }
 
 .hamburger .bar {
@@ -217,10 +221,6 @@ footer {
     .services-container {
         flex-direction: column;
         align-items: center;
-    }
-
-    .hamburger {
-        display: flex;
     }
 
     nav ul {
