@@ -14,12 +14,13 @@
             
         </div>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+<ul>
+<li><a href="#" onclick="showSection('home')">Home</a></li>
+<li><a href="#" onclick="showSection('services')">Services</a></li>
+<li><a href="#" onclick="showSection('contact')">Contact</a></li>
+</ul>
+</nav>
+
     </header>
 
     <main>
@@ -27,6 +28,14 @@
             <h1>Your Health, Our Priority</h1>
             <p>Providing quality homeopathic treatments to improve your well-being.</p>
         </section>
+        <section id="home">
+<h2>Your Health, Our Priority</h2>
+<p>Providing quality homeopathic treatments to improve your well-being.</p>
+<div class="slideshow">
+<img src="image1.jpg" alt="First Image" class="slideshow-image">
+<img src="image2.jpg" alt="Second Image" class="slideshow-image">
+</div>
+</section>
 
         <!-- Services Section -->
         <section class="services">
@@ -54,5 +63,22 @@
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
+    <script>
+function showSection(sectionId) {
+const sections = document.querySelectorAll('section');
+sections.forEach(section => section.style.display = 'none');
+document.getElementById(sectionId).style.display = 'block';
+}
+
+let currentImage = 0;
+const images = document.querySelectorAll('.slideshow-image');
+setInterval(() => {
+images[currentImage].style.display = 'none';
+currentImage = (currentImage + 1) % images.length;
+images[currentImage].style.display = 'block';
+}, 10000);
+</script>
+
+    
 </body>
 </html>
