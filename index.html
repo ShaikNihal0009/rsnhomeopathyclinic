@@ -6,39 +6,33 @@
     <title>R.S.N Homeopathy Clinic</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="showSection('home')">
     <header>
         <div class="header-container">
             <img src="logo.png" alt="Clinic Logo" class="logo">
             <h3>R.S.N Homeopathy Clinic</h3>
-            
         </div>
         <nav>
-<ul>
-<li><a href="#" onclick="showSection('home')">Home</a></li>
-<li><a href="#" onclick="showSection('services')">Services</a></li>
-<li><a href="#" onclick="showSection('contact')">Contact</a></li>
-</ul>
-</nav>
-
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('services')">Services</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="intro">
+        <section id="home" class="intro">
             <h1>Your Health, Our Priority</h1>
             <p>Providing quality homeopathic treatments to improve your well-being.</p>
+            <div class="slideshow">
+                <img src="image1.jpg" alt="First Image" class="slideshow-image">
+                <img src="image2.jpg" alt="Second Image" class="slideshow-image">
+            </div>
         </section>
-        <section id="home">
-<h2>Your Health, Our Priority</h2>
-<p>Providing quality homeopathic treatments to improve your well-being.</p>
-<div class="slideshow">
-<img src="image1.jpg" alt="First Image" class="slideshow-image">
-<img src="image2.jpg" alt="Second Image" class="slideshow-image">
-</div>
-</section>
 
         <!-- Services Section -->
-        <section class="services">
+        <section id="services" style="display:none;">
             <h2>Our Services</h2>
             <div class="services-container">
                 <div class="service-card">
@@ -58,27 +52,35 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="display:none;">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need to book an appointment, feel free to reach out.</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+            <p><strong>Email:</strong> contact@rsnhomeopathy.com</p>
+            <p><strong>Address:</strong> 123 Wellness Street, Health City, HC 45678</p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
+
     <script>
-function showSection(sectionId) {
-const sections = document.querySelectorAll('section');
-sections.forEach(section => section.style.display = 'none');
-document.getElementById(sectionId).style.display = 'block';
-}
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
 
-let currentImage = 0;
-const images = document.querySelectorAll('.slideshow-image');
-setInterval(() => {
-images[currentImage].style.display = 'none';
-currentImage = (currentImage + 1) % images.length;
-images[currentImage].style.display = 'block';
-}, 10000);
-</script>
-
-    
+        let currentImage = 0;
+        const images = document.querySelectorAll('.slideshow-image');
+        setInterval(() => {
+            images[currentImage].style.display = 'none';
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].style.display = 'block';
+        }, 10000);
+    </script>
 </body>
 </html>
