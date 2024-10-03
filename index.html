@@ -9,17 +9,17 @@
 <body onload="showSection('home')">
     <header>
         <div class="header-container">
-            <span class="hamburger">&#9776;</span> <!-- Hamburger Icon -->
             <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Clinic Logo" class="logo">
             <h2>R.S.N Homeopathy Clinic</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('services')">Services</a></li>
+                    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showSection('home')">Home</a></li>
-                <li><a href="#" onclick="showSection('services')">Services</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-            </ul>
-        </nav>
+        <span class="hamburger">&#9776;</span> <!-- Hamburger Icon -->
     </header>
 
     <main>
@@ -32,7 +32,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" style="display:none;">
             <h2>Our Services</h2>
             <div class="services-container">
@@ -54,7 +53,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" style="display:none;">
             <h2>Contact Us</h2>
             <p>If you have any questions or need to book an appointment, feel free to reach out.</p>
@@ -63,11 +61,16 @@
             <p><strong>Address:</strong> 123 Wellness Street, Health City, HC 45678</p>
         </section>
 
-        <!-- About Us & Social Media in Hamburger Menu -->
+        <section id="about" style="display:none;">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing the best homeopathic care for our patients.</p>
+            <p>Our team of experienced practitioners is committed to your health and wellness.</p>
+        </section>
+
         <div class="hamburger-menu">
             <span class="close">&times;</span> <!-- X symbol to close -->
             <ul>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#" onclick="showSection('about')">About Us</a></li>
                 <li><a href="https://instagram.com" target="_blank"><img src="instagram.png" alt="Instagram" class="social-icon"></a></li>
             </ul>
         </div>
