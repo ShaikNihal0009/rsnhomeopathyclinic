@@ -8,33 +8,64 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <img src="your-logo-file.jpeg" alt="Clinic Logo" class="clinic-logo">
-            <div class="clinic-info">
-                <h3>R.S.N Homeopathy Clinic</h3>
-            </div>
-            <div class="doctor-info">
-                <h3>Dr. R.S. Name</h3>
-                <p>BHMS</p>
-            </div>
+        <div class="logo-container">
+            <img src="IMG_1671.jpeg" alt="Clinic Logo" class="logo">
+            <h1>R.S.N Homeopathy Clinic</h1>
         </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('services')">Services</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <h1>Your Health, Our Priority</h1>
+    <section id="home">
+        <h2>Your Health, Our Priority</h2>
         <p>Providing quality homeopathic treatments to improve your well-being.</p>
+        <div class="slideshow">
+            <img src="image1.jpg" alt="First Image" class="slideshow-image">
+            <img src="image2.jpg" alt="Second Image" class="slideshow-image">
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>General Health Check-ups</li>
+            <li>Chronic Disease Management</li>
+            <li>Homeopathic Consultations</li>
+            <li>Pediatric Homeopathy</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@rsnhomeopathy.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>Address: 123 Health Avenue, City, Country</p>
     </section>
 
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        let currentImage = 0;
+        const images = document.querySelectorAll('.slideshow-image');
+        setInterval(() => {
+            images[currentImage].style.display = 'none';
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].style.display = 'block';
+        }, 10000);
+    </script>
 </body>
 </html>
