@@ -116,6 +116,10 @@
             currentImage = (currentImage + 1) % images.length;
             images[currentImage].style.display = 'block';
         }, 10000);
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            const menu = document.querySelector('.hamburger-menu');
+            menu.classList.toggle('open'); // Toggle the 'open' class to show/hide the menu
+        });
     </script>
 </body>
 </html>
