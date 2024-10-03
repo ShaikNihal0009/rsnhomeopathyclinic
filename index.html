@@ -8,13 +8,17 @@
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="IMG_1671.jpeg" alt="Clinic Logo" class="logo">
-            <h3></h3>R.S.N Homeopathy Clinic</h3>
-        </div>
-        <div class="doctor-info">
-            <p>Dr. R.S. Name</p>
-            <p>BHMS</p>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/mnt/data/IMG_1674.png" alt="Clinic Logo" class="clinic-logo">
+            </div>
+            <div class="title-container">
+                <h1 class="clinic-name">R.S.N Homeopathy Clinic</h1>
+            </div>
+            <div class="doctor-info">
+                <h3>Dr. R.S. Name</h3>
+                <p>BHMS</p>
+            </div>
         </div>
     </header>
 
@@ -29,10 +33,6 @@
     <section id="home">
         <h2>Your Health, Our Priority</h2>
         <p>Providing quality homeopathic treatments to improve your well-being.</p>
-        <div class="slideshow">
-            <img src="image1.jpg" alt="First Image" class="slideshow-image">
-            <img src="image2.jpg" alt="Second Image" class="slideshow-image">
-        </div>
     </section>
 
     <section id="services">
@@ -62,14 +62,6 @@
             sections.forEach(section => section.style.display = 'none');
             document.getElementById(sectionId).style.display = 'block';
         }
-
-        let currentImage = 0;
-        const images = document.querySelectorAll('.slideshow-image');
-        setInterval(() => {
-            images[currentImage].style.display = 'none';
-            currentImage = (currentImage + 1) % images.length;
-            images[currentImage].style.display = 'block';
-        }, 10000);
     </script>
 </body>
 </html>
