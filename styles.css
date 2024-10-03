@@ -130,22 +130,23 @@ nav ul li a:hover {
 }
 /* Slideshow */
 .slideshow {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
     position: relative;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
 }
 
-.slideshow-image {
-    width: 100vw;  /* Fit image to the viewport width */
-    height: 100vh; /* Fit image to the viewport height */
-    object-fit: cover; /* Ensures image covers the entire container without distortion */
+.slideshow-img {
+    width: 100%;
+    height: auto;
     display: none;
 }
 
-.slideshow-image:first-child {
+/* Show only the first image initially */
+.slideshow-img:first-child {
     display: block;
 }
+
 
 /* Footer Styles */
 footer {
