@@ -128,24 +128,25 @@ nav ul li a:hover {
     font-size: 16px;
     color: #555;
 }
+/* Slideshow */
 .slideshow {
     position: relative;
-    width: 100%;
-    max-width: 100%; /* Ensures the slideshow takes up the full width of the screen */
-    height: auto;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
-    margin: 20px auto;
 }
 
 .slideshow-image {
-    width: 100%; /* Ensures the images scale to fit the container width */
-    height: auto; /* Maintains the aspect ratio of the image */
+    width: 100vw;  /* Fit image to the viewport width */
+    height: 100vh; /* Fit image to the viewport height */
+    object-fit: cover; /* Ensures image covers the entire container without distortion */
     display: none;
 }
 
 .slideshow-image:first-child {
     display: block;
 }
+
 /* Footer Styles */
 footer {
     background-color: #333;
