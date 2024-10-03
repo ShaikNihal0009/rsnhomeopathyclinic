@@ -9,11 +9,9 @@
 <body>
     <header>
         <div class="header-content">
-            <div class="logo-container">
-                <img src="/mnt/data/IMG_1674.png" alt="Clinic Logo" class="clinic-logo">
-            </div>
-            <div class="title-container">
-                <h1 class="clinic-name">R.S.N Homeopathy Clinic</h1>
+            <img src="your-logo-file.jpeg" alt="Clinic Logo" class="clinic-logo">
+            <div class="clinic-info">
+                <h3>R.S.N Homeopathy Clinic</h3>
             </div>
             <div class="doctor-info">
                 <h3>Dr. R.S. Name</h3>
@@ -24,44 +22,19 @@
 
     <nav>
         <ul>
-            <li><a href="#" onclick="showSection('home')">Home</a></li>
-            <li><a href="#" onclick="showSection('services')">Services</a></li>
-            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home">
-        <h2>Your Health, Our Priority</h2>
+    <section class="hero">
+        <h1>Your Health, Our Priority</h1>
         <p>Providing quality homeopathic treatments to improve your well-being.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>General Health Check-ups</li>
-            <li>Chronic Disease Management</li>
-            <li>Homeopathic Consultations</li>
-            <li>Pediatric Homeopathy</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@rsnhomeopathy.com</p>
-        <p>Phone: +123 456 7890</p>
-        <p>Address: 123 Health Avenue, City, Country</p>
     </section>
 
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
-
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
 </body>
 </html>
