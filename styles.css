@@ -53,41 +53,7 @@ nav ul li a:hover {
 }
 
 /* Hamburger Menu */
-.hamburger {
-    display: none; /* Hide on larger screens */
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    left: 20px; /* Position it to the left */
-}
 
-.hamburger-menu {
-    display: none; /* Hide by default */
-    position: absolute;
-    top: 60px; /* Position below the header */
-    left: 0;
-    background-color: #4CAF50;
-    width: 100%;
-    z-index: 1;
-}
-
-.hamburger-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.hamburger-menu ul li {
-    padding: 10px;
-    text-align: center;
-}
-
-.hamburger-menu .close {
-    font-size: 30px;
-    cursor: pointer;
-    float: right;
-    padding: 10px;
-}
 
 /* Intro Section */
 .intro {
@@ -168,20 +134,4 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Show hamburger on smaller screens */
-    }
-    
-    .hamburger-menu {
-        display: block; /* Show hamburger menu when activated */
-    }
-    
-    .hamburger-menu ul {
-        background-color: #4CAF50; /* Background color for menu */
-    }
 
-    .hamburger-menu ul li a {
-        color: white; /* Link color in menu */
-    }
-}
