@@ -6,69 +6,85 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header and logo */
 header {
     background-color: #4CAF50;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+h1 {
     color: white;
-    padding: 1rem;
-    text-align: center;
+    margin: 0;
 }
 
-/* Vertical Navigation Menu */
-nav {
-    background-color: #ADD8E6; /* Light blue background */
-    padding: 1rem;
-    width: 100%; /* Full width */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-}
-
+/* Navigation styles */
 nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    text-align: left; /* Align text to the left */
+    background-color: #ADD8E6;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 nav ul li {
-    margin-bottom: 10px; /* Space between menu items */
+    margin: 10px 0;
 }
 
 nav ul li a {
-    display: block; /* Each link takes full width */
+    text-decoration: none;
     color: white;
     background-color: #333;
-    text-decoration: none;
-    padding: 10px;
+    padding: 15px 20px;
+    display: block;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #555;
 }
 
+/* Section and Slideshow */
 section {
     padding: 20px;
-    margin-left: 20px; /* Offset the section from the vertical menu */
     display: none; /* Hide all sections initially */
 }
 
 #home {
-    display: block; /* Show only the home section initially */
+    display: block; /* Only show the home section initially */
 }
 
-/* Slideshow styles */
 .slideshow {
-    width: 100%;
-    max-width: 600px; /* Restrict width of the slideshow */
-    margin: 20px auto;
-    position: relative;
+    margin-top: 20px;
 }
 
-.slideshow-img {
+.slideshow-image {
+    display: none;
     width: 100%;
-    max-width: 600px; /* Restrict width of the images */
-    height: auto;
+    max-width: 600px;
 }
 
+.slideshow-image:first-child {
+    display: block;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
