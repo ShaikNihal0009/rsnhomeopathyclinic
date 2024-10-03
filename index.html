@@ -9,9 +9,19 @@
 <body onload="showSection('home')">
     <header>
         <div class="header-container">
-            <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Clinic Logo" class="logo">
-            <h2>R.S.N Homeopathy Clinic</h3>
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" onclick="toggleHamburgerMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <!-- Logo and Clinic Name -->
+            <img src="logo.png" alt="Clinic Logo" class="logo">
+            <h2>R.S.N Homeopathy Clinic</h2>
         </div>
+
+        <!-- Existing Menu -->
         <nav>
             <ul>
                 <li><a href="#" onclick="showSection('home')">Home</a></li>
@@ -21,7 +31,21 @@
         </nav>
     </header>
 
+    <!-- Hamburger Menu Dropdown -->
+    <nav id="hamburgerMenu" class="hamburger-menu" style="display: none;">
+        <ul>
+            <li><a href="#" onclick="showSection('about')">About Us</a></li>
+            <li>
+                <!-- Instagram Image Link -->
+                <a href="https://instagram.com" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <main>
+        <!-- Home Section -->
         <section id="home" class="intro">
             <h1>Your Health, Our Priority</h1>
             <p>Providing quality homeopathic treatments to improve your well-being.</p>
@@ -36,7 +60,7 @@
             <h2>Our Services</h2>
             <div class="services-container">
                 <div class="service-card">
-                    <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Homeopathy Consultation">
+                    <img src="homeopathy-icon.png" alt="Homeopathy Consultation">
                     <h3>Homeopathy Consultation</h3>
                     <p>Personalized homeopathic remedies to suit your specific health needs.</p>
                 </div>
@@ -60,16 +84,12 @@
             <p><strong>Phone:</strong> +1 234 567 890</p>
             <p><strong>Email:</strong> contact@rsnhomeopathy.com</p>
             <p><strong>Address:</strong> 123 Wellness Street, Health City, HC 45678</p>
-            <div style="text-align: center;">
-        <iframe
-            src=""
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
-            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" style="display:none;">
+            <h2>About Us</h2>
+            <p>Welcome to R.S.N Homeopathy Clinic. We are committed to providing personalized and natural treatments to ensure your optimal health and well-being.</p>
         </section>
     </main>
 
@@ -82,6 +102,11 @@
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.style.display = 'none');
             document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function toggleHamburgerMenu() {
+            const menu = document.getElementById('hamburgerMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
 
         let currentImage = 0;
