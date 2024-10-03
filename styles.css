@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -30,62 +29,6 @@ header {
     height: 50px;
 }
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
-}
-
-.hamburger-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 999;
-    padding-top: 60px;
-    text-align: center;
-}
-
-.hamburger-menu.open {
-    display: block;
-}
-
-.hamburger-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.hamburger-menu ul li {
-    margin: 20px 0;
-}
-
-.hamburger-menu ul li a {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-}
-
-.hamburger-menu .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 36px;
-    cursor: pointer;
-    color: white;
-}
-
-/* Social Media Icon */
-.social-icon {
-    width: 40px;
-    height: 40px;
-}
-
-/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -109,7 +52,44 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Main Section */
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hide on larger screens */
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 20px; /* Position it to the left */
+}
+
+.hamburger-menu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 60px; /* Position below the header */
+    left: 0;
+    background-color: #4CAF50;
+    width: 100%;
+    z-index: 1;
+}
+
+.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hamburger-menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.hamburger-menu .close {
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+    padding: 10px;
+}
+
+/* Intro Section */
 .intro {
     padding: 50px 20px;
     text-align: center;
@@ -190,6 +170,18 @@ footer {
 /* Media Queries */
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger on smaller screens */
+    }
+    
+    .hamburger-menu {
+        display: block; /* Show hamburger menu when activated */
+    }
+    
+    .hamburger-menu ul {
+        background-color: #4CAF50; /* Background color for menu */
+    }
+
+    .hamburger-menu ul li a {
+        color: white; /* Link color in menu */
     }
 }
