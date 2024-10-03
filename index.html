@@ -8,64 +8,54 @@
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="59cf6777-b494-4f5f-a807-a2ef1be4c48e.jpeg" alt="Clinic Logo" class="logo">
-            <h2>R.S.N Homeopathy Clinic</h2>
+        <div class="header-container">
+            <img src="logo.png" alt="Clinic Logo" class="logo">
+            <h3>R.S.N Homeopathy Clinic</h3>
+            <div class="doctor-info">
+                <p>Dr. R.S. Name</p>
+                <p>BHMS</p>
+            </div>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showSection('home')">Home</a></li>
-            <li><a href="#" onclick="showSection('services')">Services</a></li>
-            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-        </ul>
-    </nav>
+    <main>
+        <section class="intro">
+            <h1>Your Health, Our Priority</h1>
+            <p>Providing quality homeopathic treatments to improve your well-being.</p>
+        </section>
 
-    <section id="home">
-        <h2>Your Health, Our Priority</h2>
-        <p>Providing quality homeopathic treatments to improve your well-being.</p>
-        <div class="slideshow">
-            <img src="image1.jpg" alt="First Image" class="slideshow-image">
-            <img src="image2.jpg" alt="Second Image" class="slideshow-image">
-        </div>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>General Health Check-ups</li>
-            <li>Chronic Disease Management</li>
-            <li>Homeopathic Consultations</li>
-            <li>Pediatric Homeopathy</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@rsnhomeopathy.com</p>
-        <p>Phone: +123 456 7890</p>
-        <p>Address: 123 Health Avenue, City, Country</p>
-    </section>
+        <!-- Services Section -->
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="homeopathy-icon.png" alt="Homeopathy Consultation">
+                    <h3>Homeopathy Consultation</h3>
+                    <p>Personalized homeopathic remedies to suit your specific health needs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="chronic-icon.png" alt="Chronic Disease Treatment">
+                    <h3>Chronic Disease Treatment</h3>
+                    <p>Effective treatments for chronic conditions like asthma, arthritis, and more.</p>
+                </div>
+                <div class="service-card">
+                    <img src="wellness-icon.png" alt="Wellness Programs">
+                    <h3>Wellness Programs</h3>
+                    <p>Customized wellness programs to promote holistic health and well-being.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 R.S.N Homeopathy Clinic. All rights reserved.</p>
     </footer>
-
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        let currentImage = 0;
-        const images = document.querySelectorAll('.slideshow-image');
-        setInterval(() => {
-            images[currentImage].style.display = 'none';
-            currentImage = (currentImage + 1) % images.length;
-            images[currentImage].style.display = 'block';
-        }, 10000);
-    </script>
 </body>
 </html>
