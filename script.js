@@ -1,25 +1,24 @@
-document.querySelector('.hamburger').addEventListener('click', function() {
-    const menu = document.querySelector('.hamburger-menu');
-    menu.classList.toggle('open'); // Toggle the 'open' class to show the menu
-});
-
-document.querySelector('.hamburger-menu .close').addEventListener('click', function() {
-    const menu = document.querySelector('.hamburger-menu');
-    menu.classList.remove('open'); // Remove the 'open' class to hide the menu
-});
-
-// Slideshow logic
-let currentImage = 0;
-const images = document.querySelectorAll('.slideshow-image');
-setInterval(() => {
-    images[currentImage].style.display = 'none';
-    currentImage = (currentImage + 1) % images.length;
-    images[currentImage].style.display = 'block';
-}, 10000);
-
-// Show section logic
 function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('main > section');
     sections.forEach(section => section.style.display = 'none');
     document.getElementById(sectionId).style.display = 'block';
 }
+
+// Hamburger menu functionality
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.hamburger-menu');
+const closeButton = document.querySelector('.close');
+
+hamburger.addEventListener('click', () => {
+    menu.style.display = 'block'; // Show the hamburger menu
+});
+
+closeButton.addEventListener('click', () => {
+    menu.style.display = 'none'; // Hide the hamburger menu
+});
+
+// Close the menu when a link is clicked
+const menuLinks = menu.querySelectorAll('ul li a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.style.display = 'none'; // Hide the menu on link
