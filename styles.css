@@ -97,7 +97,7 @@ nav ul li a:hover {
 
 .video-container video {
   width: 100%;
-  max-width: 1000px;
+  max-width: 720px;
   height: 250px;
   border: 2px solid #4CAF50; /* Optional border */
   border-radius: 10px;        /* Optional rounded corners */
