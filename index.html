@@ -34,10 +34,28 @@
           Your browser does not support the video tag.
         </video>
       </div>
+
+      <!-- Testimonials Section -->
+      <div id="testimonials">
+        <h2>What Our Patients Say</h2>
+        <div class="testimonial-container">
+          <div class="testimonial-card active">
+            <p>"The treatments here have changed my life. Highly recommend!"</p>
+            <p><strong>- Patient A</strong></p>
+          </div>
+          <div class="testimonial-card">
+            <p>"I felt supported and cared for throughout my treatment. Thank you!"</p>
+            <p><strong>- Patient B</strong></p>
+          </div>
+          <div class="testimonial-card">
+            <p>"The staff is professional, and the remedies work wonders!"</p>
+            <p><strong>- Patient C</strong></p>
+          </div>
+        </div>
+      </div>
       
     </section>
      
-
     <!-- Services Section -->
     <section id="services" style="display:none;">
       <h2>Our Services</h2>
@@ -82,13 +100,14 @@
       document.getElementById(sectionId).style.display = 'block';
     }
 
-    let currentImage = 0;
-    const images = document.querySelectorAll('.slideshow-image');
+    // Slideshow for testimonials
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
     setInterval(() => {
-      images[currentImage].style.display = 'none';
-      currentImage = (currentImage + 1) % images.length;
-      images[currentImage].style.display = 'block';
-    }, 10000);
+      testimonials[currentTestimonial].classList.remove('active');
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].classList.add('active');
+    }, 10000); // Change testimonial every 10 seconds
   </script>
 </body>
 </html>
