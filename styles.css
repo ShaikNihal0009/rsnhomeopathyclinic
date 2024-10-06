@@ -180,6 +180,7 @@ nav ul li a:hover {
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust position */
+  border: 2px solid #003366;
 }
 
 .testimonial-card.active {
