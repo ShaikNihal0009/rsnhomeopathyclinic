@@ -89,7 +89,7 @@ nav ul li a:hover {
 
 /* Video Container Styles */
 .video-container {
-  max-width: 800px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +98,6 @@ nav ul li a:hover {
 
 .video-container video {
   width: 100%;
-  max-width: 720px;
   height: 250px;
   border: 2px solid #4CAF50; /* Optional border */
   border-radius: 10px;        /* Optional rounded corners */
