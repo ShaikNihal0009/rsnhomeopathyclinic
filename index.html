@@ -126,30 +126,29 @@
       if (document.readyState === "interactive") {
         // Show loading overlay when the page starts loading
         document.getElementById('loading-overlay').style.display = 'flex';
-        var progress = 0;
+        let progress = 0;
         
-        var interval = setInterval(function() {
+        const interval = setInterval(function() {
+          // Simulate loading progress
+          progress += Math.random() * 5; // Adjust the increment for a smoother load
+          if (progress >= 100) {
+            progress = 100;
+          }
+          document.getElementById('progress-bar').style.width = progress + "%";
+          document.getElementById('percentage').textContent = Math.floor(progress) + "%";
+          
           if (progress >= 100) {
             clearInterval(interval);
-          } else {
-            // Simulate loading progress
-            progress += Math.random() * 5; // Adjust the increment for a smoother load
-            if (progress > 100) progress = 100; // Cap progress at 100%
-            document.getElementById('progress-bar').style.width = progress + "%";
-            document.getElementById('percentage').textContent = Math.floor(progress) + "%";
           }
         }, 100);
       }
 
       // When the window fully loads
       window.onload = function() {
-        // Ensure the progress is at 100%
-        document.getElementById('progress-bar').style.width = "100%";
-        document.getElementById('percentage').textContent = "100%";
-        // Hide loading overlay
+        // Hide loading overlay once the page fully loads
         setTimeout(() => {
           document.getElementById('loading-overlay').style.display = 'none';
-        }, 500); // Delay to see the 100% before hiding
+        }, 500); // Delay to see the final percentage before hiding
       };
     }
   </script>
