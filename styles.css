@@ -206,7 +206,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -217,14 +217,26 @@ footer {
 
 .loading-text {
   text-align: center;
-  animation: fadeInOut 1.5s ease-in-out infinite;
+  animation: textFade 1.5s ease-in-out infinite, textColorChange 3s ease-in-out infinite;
 }
 
-@keyframes fadeInOut {
+@keyframes textFade {
   0%, 100% {
     opacity: 0;
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes textColorChange {
+  0% {
+    color: #4CAF50;
+  }
+  50% {
+    color: #003366;
+  }
+  100% {
+    color: #4CAF50;
   }
 }
