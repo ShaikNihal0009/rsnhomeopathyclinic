@@ -91,8 +91,8 @@ nav ul li a:hover {
   width: 100%;
   max-width: 720px;
   height: 500px;
-  border: 2px solid #4CAF50; /* Optional border */
-  border-radius: 10px;        /* Optional rounded corners */
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
 }
 
 /* Responsive Adjustments */
@@ -157,35 +157,35 @@ nav ul li a:hover {
 #testimonials {
   padding: 50px 20px;
   text-align: center;
-  background-color: #f9f9f9; /* Optional: Background color for contrast */
+  background-color: #f9f9f9;
 }
 
 .testimonial-container {
-  position: relative; /* To position the cards over one another */
-  height: 300px; /* Adjust based on your content */
-  overflow: hidden; /* Hide overflow content */
+  position: relative;
+  height: 300px;
+  overflow: hidden;
 }
 
 .testimonial-card {
   background-color: #fff;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 20px;
   width: 90%;
-  max-width: 500px; /* Set a max width for larger screens */
-  margin: 0 auto; /* Center the cards */
-  opacity: 0; /* Hide by default */
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
-  position: absolute; /* Position for slideshow effect */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust position */
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: 2px solid #003366;
 }
 
 .testimonial-card.active {
-  opacity: 1; /* Show the active card */
-  transform: translate(-50%, -50%) scale(1.05); /* Slightly enlarge active card */
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 /* Footer Styles */
@@ -197,4 +197,34 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: #4CAF50;
+}
+
+.loading-text {
+  text-align: center;
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
