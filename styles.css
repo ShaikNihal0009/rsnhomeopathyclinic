@@ -5,22 +5,51 @@ body {
   padding: 0;
 }
 
-/* Iframe Styles */
-iframe {
+/* Loading Overlay */
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 500px;
-  max-width: 100%;
-  border: 0;
+  height: 100%;
+  background-color: #ffffff; /* White background to hide everything */
+  z-index: 9999; /* Ensure it's on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Typography */
-h1, h2, h3, p {
-  margin: 0;
-  padding: 10px;
+.loading-text {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
+  color: #4CAF50; /* Clinic's theme color */
+  animation: fadeText 2s infinite; /* Animation */
 }
 
-/* Header Styles */
+.loading-text span {
+  display: block;
+  font-size: 1.5rem;
+  color: #003366; /* Darker contrast for the second line */
+  margin-top: 10px;
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header */
 header {
   background-color: #4CAF50;
   color: white;
@@ -63,180 +92,124 @@ nav ul li a:hover {
   background-color: #555;
 }
 
-/* Main Section */
-.intro {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.intro h1 {
-  font-size: 36px;
-  color: #333;
-}
-
-.intro p {
-  font-size: 18px;
-  color: #666;
-}
-
-/* Video Container Styles */
-.video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Sections */
+section {
+  display: none;
   padding: 20px;
 }
 
-.video-container video {
+#home {
+  display: block; /* Default section to show */
+}
+
+/* Footer */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  max-width: 720px;
-  height: 500px;
-  border: 2px solid #4CAF50;
-  border-radius: 10px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .video-container video {
-    max-width: 100%;
-  }
-}
-
-/* Services Section */
-.services {
-  background-color: #f4f4f9;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.services h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.services-container {
+/* Card Container for Testimonials */
+.card-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.service-card {
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
   padding: 20px;
-  width: 300px;
-  text-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-}
-
-.service-card img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 15px;
-}
-
-.service-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #4CAF50;
-}
-
-.service-card p {
-  font-size: 16px;
-  color: #555;
-}
-
-/* Testimonials Section */
-#testimonials {
-  padding: 50px 20px;
-  text-align: center;
   background-color: #f9f9f9;
 }
 
-.testimonial-container {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
-
-.testimonial-card {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.card {
+  flex: 0 0 300px;
+  margin: 10px;
   padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  margin: 0 auto;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid #003366;
-}
-
-.testimonial-card.active {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-/* Footer Styles */
-footer {
-  background-color: #333;
-  color: white;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 
-/* Loading Overlay */
-#loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
+.card h3 {
   color: #4CAF50;
 }
 
-.loading-text {
-  text-align: center;
-  animation: textFade 1.5s ease-in-out infinite, textColorChange 3s ease-in-out infinite;
+.card p {
+  font-size: 1rem;
+  color: #333;
 }
 
-@keyframes textFade {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+/* Slideshow Controls */
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-@keyframes textColorChange {
-  0% {
-    color: #4CAF50;
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+  background-color: #333;
+}
+
+/* Contact Form */
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
   }
-  50% {
-    color: #003366;
+
+  nav ul {
+    flex-direction: column;
   }
-  100% {
-    color: #4CAF50;
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
   }
 }
