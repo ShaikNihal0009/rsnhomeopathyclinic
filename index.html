@@ -10,15 +10,8 @@
   
   <!-- Loading Overlay with Progress Bar -->
   <div id="loading-overlay">
-    <div class="loading-icon">
-      <!-- Simple SVG clinic icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-        <rect x="12" y="24" width="40" height="36" fill="#4CAF50" />
-        <rect x="20" y="12" width="24" height="12" fill="#4CAF50" />
-        <rect x="28" y="0" width="8" height="12" fill="#fff" />
-        <rect x="24" y="28" width="16" height="8" fill="#fff" />
-        <path d="M 12 36 L 52 36" stroke="#fff" stroke-width="4" />
-      </svg>
+    <div class="loading-logo">
+      <img src="f3cacacd-b411-45d2-9910-d73099db88b7.jpeg" alt="Clinic Logo" />
     </div>
     <div class="loading-text">
       <span>R.S.N Homeopathy Clinic</span>
@@ -134,13 +127,11 @@
     // Page load progress bar
     document.onreadystatechange = function() {
       if (document.readyState === "interactive") {
-        // Show loading overlay when the page starts loading
         document.getElementById('loading-overlay').style.display = 'flex';
         let progress = 0;
         
         const interval = setInterval(function() {
-          // Simulate loading progress
-          progress += Math.random() * 5; // Adjust the increment for a smoother load
+          progress += Math.random() * 5;
           if (progress >= 100) {
             progress = 100;
           }
@@ -153,12 +144,10 @@
         }, 100);
       }
 
-      // When the window fully loads
       window.onload = function() {
-        // Hide loading overlay once the page fully loads
         setTimeout(() => {
           document.getElementById('loading-overlay').style.display = 'none';
-        }, 500); // Delay to see the final percentage before hiding
+        }, 500);
       };
     }
   </script>
