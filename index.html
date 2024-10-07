@@ -8,12 +8,15 @@
 </head>
 <body onload="showSection('home')">
   
-  <!-- Loading Overlay -->
+  <!-- Loading Overlay with Progress Bar -->
   <div id="loading-overlay">
     <div class="loading-text">
       <span>R.S.N Homeopathy Clinic</span>
-      
     </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="percentage" id="percentage">0%</div>
   </div>
 
   <header>
@@ -118,12 +121,22 @@
       testimonials[currentTestimonial].classList.add('active');
     }, 10000); // Change testimonial every 10 seconds
 
-    // Hide the loading overlay after 3 seconds
-    window.onload = function() {
-      
-        document.getElementById('loading-overlay').style.display = 'none';
-      
-    };
+    // Page load progress bar
+    document.onreadystatechange = function() {
+      if (document.readyState === "interactive") {
+        var progress = 0;
+        var interval = setInterval(function() {
+          progress += Math.random() * 10;
+          if (progress >= 100) {
+            clearInterval(interval);
+            document.getElementById('loading-overlay').style.display = 'none';
+          } else {
+            document.getElementById('progress-bar').style.width = progress + "%";
+            document.getElementById('percentage').textContent = Math.floor(progress) + "%";
+          }
+        }, 100);
+      }
+    }
   </script>
 </body>
 </html>
