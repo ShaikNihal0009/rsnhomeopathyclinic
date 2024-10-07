@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body onload="showSection('home')">
+  
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <div class="loading-text">
+      <span>R.S.N Homeopathy Clinic</span>
+      <span>Your Health, Our Priority</span>
+    </div>
+  </div>
+
   <header>
     <div class="header-container">
       <img src="f3cacacd-b411-45d2-9910-d73099db88b7.jpeg" alt="Clinic Logo" class="logo">
@@ -108,6 +117,13 @@
       currentTestimonial = (currentTestimonial + 1) % testimonials.length;
       testimonials[currentTestimonial].classList.add('active');
     }, 10000); // Change testimonial every 10 seconds
+
+    // Hide the loading overlay after 3 seconds
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('loading-overlay').style.display = 'none';
+      }, 3000); // Adjust the time (in milliseconds) as needed
+    };
   </script>
 </body>
 </html>
