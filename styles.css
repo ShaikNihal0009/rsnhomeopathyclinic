@@ -218,15 +218,15 @@ footer {
 
 .loading-logo img {
   width: 100px;
-  animation: bounce 1s infinite alternate;
+  animation: spin 2s linear infinite;
 }
 
-@keyframes bounce {
+@keyframes spin {
   0% {
-    transform: translateY(0);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translateY(-20px);
+    transform: rotate(360deg);
   }
 }
 
@@ -234,15 +234,22 @@ footer {
   text-align: center;
   color: #003366;
   font-family: 'Courier New', Courier, monospace;
-  animation: typing 2s steps(10, end) infinite;
+  font-size: 28px;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
+.dots {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 20% {
+    opacity: 1;
   }
-  to {
-    width: 10ch;
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
