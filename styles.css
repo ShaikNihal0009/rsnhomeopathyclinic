@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: white; /* White background */
 }
 
 /* Iframe Styles */
@@ -157,7 +158,6 @@ nav ul li a:hover {
 #testimonials {
   padding: 50px 20px;
   text-align: center;
-  background-color: #f9f9f9;
 }
 
 .testimonial-container {
@@ -206,7 +206,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  background-color: white; /* White background */
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -218,16 +218,6 @@ footer {
 
 .loading-logo img {
   width: 100px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .loading-text {
@@ -237,32 +227,18 @@ footer {
   font-size: 28px;
 }
 
-.dots {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0%, 20% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+/* Progress Bar Styles */
 .progress-bar-container {
   width: 100%;
   background-color: #f3f3f3;
   border-radius: 5px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .progress-bar {
   height: 10px;
-  background: linear-gradient(90deg, #4CAF50, #81c784);
+  background: url('https://your-water-effect-url.com/water-effect.png') repeat; /* Replace with actual water effect URL */
   width: 0;
   transition: width 0.1s ease-in-out;
 }
@@ -270,4 +246,5 @@ footer {
 .percentage {
   margin-top: 10px;
   font-size: 24px;
+  color: #003366;
 }
