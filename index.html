@@ -13,8 +13,9 @@
     <div class="loading-logo">
       <img src="f3cacacd-b411-45d2-9910-d73099db88b7.jpeg" alt="Clinic Logo" />
     </div>
-    <div class="loading-text" id="loading-text">
-      <span>Loading...</span>
+    <div class="loading-text">
+      <span>Loading</span>
+      <span class="dots">...</span>
     </div>
     <div class="progress-bar-container">
       <div class="progress-bar" id="progress-bar"></div>
@@ -129,7 +130,7 @@
       if (document.readyState === "interactive") {
         document.getElementById('loading-overlay').style.display = 'flex';
         let progress = 0;
-        
+
         const interval = setInterval(function() {
           progress += Math.random() * 5;
           if (progress >= 100) {
