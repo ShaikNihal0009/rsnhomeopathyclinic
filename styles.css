@@ -216,18 +216,14 @@ footer {
   color: #003366;
 }
 
-.loading-icon {
-  animation: bounce 1s infinite;
-  margin-bottom: 20px;
+.loading-logo img {
+  width: 100px;
+  transform: rotateY(20deg);
+  transition: transform 0.5s;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+.loading-logo img:hover {
+  transform: rotateY(0deg) scale(1.1);
 }
 
 .loading-text {
