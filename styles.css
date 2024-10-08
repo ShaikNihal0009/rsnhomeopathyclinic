@@ -254,7 +254,7 @@ footer {
   height: 20px; /* Adjust for wave height */
   width: 100%;
   background: rgba(255, 255, 255, 0.5); /* Wave color */
-  border-radius: 50%;
+  border-radius: 70%;
   animation: wave 1.5s linear infinite;
 }
 
