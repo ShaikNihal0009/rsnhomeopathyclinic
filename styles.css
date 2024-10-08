@@ -232,12 +232,12 @@ footer {
 .blob-1{
   left:20%;
   animation:osc-l 2.5s ease infinite;
-  background:#008B8B;
+  background:#0000FF;
 }
 .blob-2{
   left:80%;
   animation:osc-r 2.5s ease infinite;
-  background:#0ff;
+  background:#3CB371;
 }
 @keyframes osc-l{
   0%{left:20%;}
