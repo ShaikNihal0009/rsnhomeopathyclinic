@@ -240,7 +240,7 @@ footer {
 .progress-bar {
   height: 10px;
   width: 0;
-  background-color: #4CAF50; /* Change this to the desired color */
+  background-color: #448EE2; /* Change this to the desired color */
   transition: width 0.1s ease-in-out;
   position: relative;
   overflow: hidden;
