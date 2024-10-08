@@ -226,7 +226,7 @@ footer {
   position:absolute;
   background:#ffffff;
   border-radius:50%;
-  top:60%;left:50%;
+  top:65%;left:50%;
   transform:translate(-50%,-50%);
 }
 .blob-1{
@@ -246,4 +246,5 @@ footer {
 @keyframes osc-r{
   0%{left:80%;}
   50%{left:50%;}
-  100%{left:
+  100%{left: 80%;
+      }
