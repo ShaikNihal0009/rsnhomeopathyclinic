@@ -232,6 +232,7 @@ footer {
 .blob-1{
   left:20%;
   animation:osc-l 2.5s ease infinite;
+  background:#008B8B;
 }
 .blob-2{
   left:80%;
