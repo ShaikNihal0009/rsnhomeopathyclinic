@@ -219,59 +219,40 @@ footer {
 .loading-logo img {
   width: 100px;
 }
-
-.loading-text {
-  text-align: center;
-  color: #003366;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 28px;
+.centered{
+  width:400px;
+  height:400px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#000;
+  filter: blur(10px) contrast(20);
 }
-
-/* Progress Bar Styles */
-.progress-bar-container {
-  width: 100%;
-  background-color: #f3f3f3;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 20px;
-  position: relative;
+.blob-1,.blob-2{
+  width:70px;
+  height:70px;
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
 }
-
-.progress-bar {
-  height: 10px;
-  width: 0;
-  background-color: #3860b0; /* Change this to the desired color */
-  transition: width 0.1s ease-in-out;
-  position: relative;
-  overflow: hidden;
+.blob-1{
+  left:20%;
+  animation:osc-l 2.5s ease infinite;
 }
-
-.progress-bar::before {
-  content: '';
-  position: absolute;
-  top: -5px; /* Adjust as needed */
-  left: 0;
-  height: 20px; /* Adjust for wave height */
-  width: 100%;
-  background: rgba(255, 255, 255, 0.5); /* Wave color */
-  border-radius: 70%;
-  animation: wave 1.5s linear infinite;
+.blob-2{
+  left:80%;
+  animation:osc-r 2.5s ease infinite;
+  background:#0ff;
 }
-
-@keyframes wave {
-  0% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+@keyframes osc-l{
+  0%{left:20%;}
+  50%{left:50%;}
+  100%{left:20%;}
 }
-
-.percentage {
-  margin-top: 10px;
-  font-size: 24px;
-  color: #003366;
-}
+@keyframes osc-r{
+  0%{left:80%;}
+  50%{left:50%;}
+  100%{left:
