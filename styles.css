@@ -24,7 +24,7 @@ h1, h2, h3, p {
 /* Header Styles */
 header {
   /*background-color: #4CAF50;*/
-  background: linear-gradient(to right, #006400, #228B22, #32CD32, #3CB371); /* Updated multi-green gradient */
+  background: linear-gradient(to right, #006400, #228B22, #32CD32, #3CB371,#006400); /* Updated multi-green gradient */
   color: white;
   padding: 10px 0;
   text-align: center;
