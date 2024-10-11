@@ -132,7 +132,13 @@
       sections.forEach(section => section.style.display = 'none');
       document.getElementById(sectionId).style.display = 'block';
     }
+  function showContactOption(option) {
+      // Hide all contact details
+      document.querySelectorAll('.contact-detail').forEach(detail => detail.style.display = 'none');
 
+      // Show the selected option
+      document.getElementById(option).style.display = 'block';
+    }
     // Slideshow for testimonials
     let currentTestimonial = 0;
     const testimonials = document.querySelectorAll('.testimonial-card');
