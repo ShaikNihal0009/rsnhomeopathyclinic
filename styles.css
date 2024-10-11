@@ -251,3 +251,19 @@ footer {
   50%{left:50%;}
   100%{left: 80%;
       }
+.contact-options {
+  margin-bottom: 20px;
+}
+
+.contact-options button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-options button:hover {
+  background-color: #45a049;
+}
