@@ -41,7 +41,7 @@ header {
 .logo {
   height: 50px;
   width: 50px;
-  border-radius:58%;
+  border-radius:50%;
   object-fit: cover;
 }
 
