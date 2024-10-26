@@ -55,9 +55,9 @@
   </div>
   <div class="doctor-details">
     <h3>Meet Our Doctor: Dr. Name</h3>
-     <p id="doctor-notes" style="font-family: 'Courier New', Courier, monospace; white-space: nowrap; overflow: hidden; border-right: 2px solid black; max-width: 600px;">
-      <!-- Text will be typed here -->
-    </p>
+    <p id="doctor-notes" style="font-family: 'Courier New', Courier, monospace; overflow: hidden; border-right: 2px solid black; max-width: 600px;">
+    <!-- Text will be typed here -->
+  </p>
   </div>
 </div>
       <!-- Testimonials Section -->
@@ -189,44 +189,49 @@
       };
     }
     const text = "I believe in treating the whole person and providing personalized care that aligns with your health goals.";
-  const typingSpeed = 50; // Speed in milliseconds
-  const maxLineLength = 50; // Character limit for each line
-  let index = 0;
+const typingSpeed = 50; // Speed in milliseconds
 
-  function typeWriter() {
-    if (index < text.length) {
-      document.getElementById("doctor-notes").innerHTML += text.charAt(index);
-      index++;
+let index = 0;
+let line = '';
 
-      // Check if the current line has reached the maximum length
-      const currentText = document.getElementById("doctor-notes").innerHTML;
-      if (currentText.length % maxLineLength === 0 && index < text.length) {
-        document.getElementById("doctor-notes").innerHTML += "<br>"; // Insert line break
-      }
+function typeWriter() {
+  if (index < text.length) {
+    // Append one character at a time
+    line += text.charAt(index);
+    document.getElementById("doctor-notes").innerHTML = line;
 
-      setTimeout(typeWriter, typingSpeed);
-    } else {
-      // Start blinking cursor after typing is done
-      document.getElementById("doctor-notes").style.borderRight = "2px solid black";
-      blinkCursor();
+    index++;
+
+    // Check if the current line has reached the maximum width of the container
+    if (document.getElementById("doctor-notes").offsetWidth >= 600 && text.charAt(index) === ' ') {
+      line += "<br>"; // Add a line break at word boundaries
+      document.getElementById("doctor-notes").innerHTML = line;
     }
-  }
 
-  function blinkCursor() {
-    setInterval(() => {
-      const notesElement = document.getElementById("doctor-notes");
-      notesElement.style.borderRight = notesElement.style.borderRight === "2px solid transparent" ? "2px solid black" : "2px solid transparent";
-    }, 500);
+    setTimeout(typeWriter, typingSpeed);
+  } else {
+    // Start blinking cursor after typing is done
+    document.getElementById("doctor-notes").style.borderRight = "2px solid black";
+    blinkCursor();
   }
+}
 
-  // Start typing when the doctor section is in view
-  window.addEventListener('scroll', () => {
-    const rect = document.querySelector('.doctor-info').getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      typeWriter();
-      window.removeEventListener('scroll', arguments.callee); // Remove event listener after starting
-    }
-  });
+function blinkCursor() {
+  setInterval(() => {
+    const notesElement = document.getElementById("doctor-notes");
+    notesElement.style.borderRight = notesElement.style.borderRight === "2px solid transparent" ? "2px solid black" : "2px solid transparent";
+  }, 500);
+}
+
+// Start typing when the doctor section is in view
+window.addEventListener('scroll', () => {
+  const rect = document.querySelector('.doctor-info').getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    typeWriter();
+    window.removeEventListener('scroll', arguments.callee); // Remove event listener after starting
+  }
+});
+
   </script>
 </body>
 </html>
