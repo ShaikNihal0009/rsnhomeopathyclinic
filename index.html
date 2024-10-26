@@ -188,7 +188,8 @@
         }, 500);
       };
     }
-    const text = "I believe in treating the whole person and providing personalized care that aligns with your health goals.";
+    
+  const text = "I believe in treating the whole person and providing personalized care that aligns with your health goals.";
 const typingSpeed = 50; // Speed in milliseconds
 
 let index = 0;
@@ -202,9 +203,10 @@ function typeWriter() {
 
     index++;
 
-    // Check if the current line has reached the maximum width of the container
-    if (document.getElementById("doctor-notes").offsetWidth >= 600 && text.charAt(index) === ' ') {
-      line += "<br>"; // Add a line break at word boundaries
+    // Add a line break only if container width is exceeded and we’re at a word boundary
+    const notesElement = document.getElementById("doctor-notes");
+    if (notesElement.scrollWidth > notesElement.clientWidth && text.charAt(index) === ' ') {
+      line += "<br>";
       document.getElementById("doctor-notes").innerHTML = line;
     }
 
@@ -225,12 +227,13 @@ function blinkCursor() {
 
 // Start typing when the doctor section is in view
 window.addEventListener('scroll', () => {
-  const rect = document.querySelector('.doctor-info').getBoundingClientRect();
+  const rect = document.querySelector('.doctor-details').getBoundingClientRect();
   if (rect.top < window.innerHeight && rect.bottom >= 0) {
     typeWriter();
     window.removeEventListener('scroll', arguments.callee); // Remove event listener after starting
   }
 });
+
 
   </script>
 </body>
