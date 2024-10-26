@@ -55,8 +55,8 @@
   </div>
   <div class="doctor-details">
     <h3>Meet Our Doctor: Dr. Name</h3>
-     <p class="doctor-notes" style="font-family: 'Courier New', Courier, monospace; white-space: nowrap; overflow: hidden; border-right: 2px solid black; animation: typing 5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;">
-      <span style="display: inline-block; width: 0;">"I believe in treating the whole person and providing personalized care that aligns with your health goals."</span>
+     <p id="doctor-notes" style="font-family: 'Courier New', Courier, monospace; white-space: nowrap; overflow: hidden; border-right: 2px solid black;">
+      <!-- Text will be typed here -->
     </p>
   </div>
 </div>
@@ -188,6 +188,36 @@
         }, 500);
       };
     }
+      const text = "I believe in treating the whole person and providing personalized care that aligns with your health goals.";
+  const typingSpeed = 50; // Speed in milliseconds
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("doctor-notes").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, typingSpeed);
+    } else {
+      // Start blinking cursor after typing is done
+      document.getElementById("doctor-notes").style.borderRight = "2px solid black";
+      blinkCursor();
+    }
+  }
+    function blinkCursor() {
+    setInterval(() => {
+      const notesElement = document.getElementById("doctor-notes");
+      notesElement.style.borderRight = notesElement.style.borderRight === "2px solid transparent" ? "2px solid black" : "2px solid transparent";
+    }, 500);
+  }
+
+  // Start typing when the doctor section is in view
+  window.addEventListener('scroll', () => {
+    const rect = document.querySelector('.doctor-info').getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      typeWriter();
+      window.removeEventListener('scroll', arguments.callee); // Remove event listener after starting
+    }
+  });
   </script>
 </body>
 </html>
