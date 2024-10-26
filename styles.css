@@ -311,28 +311,9 @@ footer {
   object-fit: cover; /* Ensures image covers the circle */
 }
 
-.doctor-details {
-  text-align: left; /* Aligns text to the left */
-}
 
-.doctor-notes {
-  font-family: 'Courier New', Courier, monospace; /* Use a typewriter font */
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  border-right: 2px solid black; /* Simulate the cursor */
-  width: 0; /* Start with no width */
-  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite; /* Apply typing and blink effects */
-}
 
-@keyframes typing {
-  from { width: 0; } /* Starts from no width */
-  to { width: 100%; } /* Ends at full width */
-}
 
-@keyframes blink-caret {
-  from, to { border-right: 2px solid transparent; } /* Hidden cursor */
-  50% { border-right: 2px solid black; } /* Visible cursor */
-}
 
 
 
