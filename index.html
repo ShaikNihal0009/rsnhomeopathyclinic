@@ -193,17 +193,35 @@
   let index = 0;
 
   function typeWriter() {
-    if (index < text.length) {
-      document.getElementById("doctor-notes").innerHTML += text.charAt(index);
+    let currentText = "";
+    
+    // Type out the text
+    while (index < text.length) {
+      currentText += text.charAt(index);
       index++;
-      setTimeout(typeWriter, typingSpeed);
-    } else {
+
+      // Check if the current line exceeds the max length
+      if (currentText.length % maxLineLength === 0 && currentText.length > 0) {
+        currentText += "<br>"; // Add a line break
+      }
+
+      document.getElementById("doctor-notes").innerHTML = currentText;
+      setTimeout(() => {
+        if (index < text.length) {
+          typeWriter(); // Continue typing
+        }
+      }, typingSpeed);
+      break; // Break to allow setTimeout to execute
+    }
+
+    if (index >= text.length) {
       // Start blinking cursor after typing is done
       document.getElementById("doctor-notes").style.borderRight = "2px solid black";
       blinkCursor();
     }
   }
-    function blinkCursor() {
+
+  function blinkCursor() {
     setInterval(() => {
       const notesElement = document.getElementById("doctor-notes");
       notesElement.style.borderRight = notesElement.style.borderRight === "2px solid transparent" ? "2px solid black" : "2px solid transparent";
