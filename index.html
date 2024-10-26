@@ -189,11 +189,11 @@
       };
     }
     
-  const text = "I believe in treating the whole person and providing personalized care that aligns with your health goals.";
+ const text = "I believe in treating the whole person and providing personalized care that aligns with your health goals.";
 const typingSpeed = 50; // Speed in milliseconds
-
 let index = 0;
 let line = '';
+let typingStarted = false; // Flag to prevent multiple triggers
 
 function typeWriter() {
   if (index < text.length) {
@@ -203,7 +203,7 @@ function typeWriter() {
 
     index++;
 
-    // Add a line break only if container width is exceeded and we’re at a word boundary
+    // Add a line break only if container width is exceeded and we're at a word boundary
     const notesElement = document.getElementById("doctor-notes");
     if (notesElement.scrollWidth > notesElement.clientWidth && text.charAt(index) === ' ') {
       line += "<br>";
@@ -227,8 +227,11 @@ function blinkCursor() {
 
 // Start typing when the doctor section is in view
 window.addEventListener('scroll', () => {
+  if (typingStarted) return; // Prevent multiple triggers
+
   const rect = document.querySelector('.doctor-details').getBoundingClientRect();
   if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    typingStarted = true; // Set flag to true
     typeWriter();
     window.removeEventListener('scroll', arguments.callee); // Remove event listener after starting
   }
