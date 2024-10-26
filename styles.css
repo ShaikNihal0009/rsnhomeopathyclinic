@@ -289,3 +289,45 @@ footer {
         box-shadow: 0 0 0 0 rgba(218, 103, 68, 0); /* Shadow resets */
     }
 }
+/* Doctor Info Styles */
+.doctor-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px; /* Adjust margin as needed */
+}
+
+.doctor-image {
+  width: 120px; /* Adjust size as needed */
+  height: 120px; /* Adjust size as needed */
+  border-radius: 50%; /* Circle shape */
+  overflow: hidden; /* Ensures the image fits within the circle */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.doctor-image img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.doctor-details {
+  text-align: left; /* Align text to the left */
+}
+
+.doctor-notes {
+  font-family: 'Courier New', Courier, monospace; /* Typewriter effect */
+  white-space: pre-wrap; /* Preserves whitespace for typewriter effect */
+  overflow: hidden; /* Prevent overflow */
+  width: 100%;
+  animation: typing 5s steps(30, end), blink-caret 0.75s step-end infinite; /* Typewriter effect animation */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-right: 2px solid transparent; }
+  50% { border-right: 2px solid black; }
+}
