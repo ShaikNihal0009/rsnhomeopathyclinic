@@ -13,10 +13,10 @@
     <div class="loading-logo">
       <img src="f3cacacd-b411-45d2-9910-d73099db88b7.jpeg" alt="Clinic Logo" />
     </div>
-    <div class = "centered">
-  <div class = "blob-1"></div>
-  <div class = "blob-2"></div>
-</div>
+    <div class="centered">
+      <div class="blob-1"></div>
+      <div class="blob-2"></div>
+    </div>
   </div>
 
   <header>
@@ -46,6 +46,17 @@
           <source src="f468dec4-6f7c-479f-8d66-908519b548b7_mp4.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+      </div>
+
+      <!-- Doctor Information Section -->
+      <div class="doctor-info">
+        <div class="doctor-image">
+          <img src="doctor-image-url.jpg" alt="Dr. Name">
+        </div>
+        <div class="doctor-details">
+          <h3>Meet Our Doctor: Dr. Name</h3>
+          <p class="doctor-notes">"I believe in treating the whole person and providing personalized care that aligns with your health goals."</p>
+        </div>
       </div>
 
       <!-- Testimonials Section -->
@@ -97,12 +108,12 @@
       
       <!-- Contact Options -->
       <div class="contact-options">
-         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 20px;">
-        <button style="border: none; color: #fff; background-image: linear-gradient(30deg, #0400ff, #4ce3f7); border-radius: 20px; padding: 0.6em 1.5em;" class="phone-email" onclick="showContactOption('phone-email')">Phone & Email</button>
-        <button style="border: none; color: #fff; background-image: linear-gradient(30deg, #0400ff, #4ce3f7); border-radius: 20px; padding: 0.6em 1.5em;" class="online" onclick="showContactOption('online')">Online Consultation</button>
-        <button style="border: none; color: #fff; background-image: linear-gradient(30deg, #0400ff, #4ce3f7); border-radius: 20px; padding: 0.6em 1.5em;" class="offline" onclick="showContactOption('offline')">Offline Consultation</button>
-         </div>
-         </div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 20px;">
+          <button style="border: none; color: #fff; background-image: linear-gradient(30deg, #0400ff, #4ce3f7); border-radius: 20px; padding: 0.6em 1.5em;" class="phone-email" onclick="showContactOption('phone-email')">Phone & Email</button>
+          <button style="border: none; color: #fff; background-image: linear-gradient(30deg, #0400ff, #4ce3f7); border-radius: 20px; padding: 0.6em 1.5em;" class="online" onclick="showContactOption('online')">Online Consultation</button>
+          <button style="border: none; color: #fff; background-image: linear-gradient(30deg, #0400ff, #4ce3f7); border-radius: 20px; padding: 0.6em 1.5em;" class="offline" onclick="showContactOption('offline')">Offline Consultation</button>
+        </div>
+      </div>
 
       <!-- Offline Consultation (Map) -->
       <div id="offline" class="contact-detail" style="display:none;">
@@ -134,7 +145,7 @@
       sections.forEach(section => section.style.display = 'none');
       document.getElementById(sectionId).style.display = 'block';
     }
-  function showContactOption(option) {
+    function showContactOption(option) {
       // Hide all contact details
       document.querySelectorAll('.contact-detail').forEach(detail => detail.style.display = 'none');
 
@@ -148,34 +159,7 @@
       testimonials[currentTestimonial].classList.remove('active');
       currentTestimonial = (currentTestimonial + 1) % testimonials.length;
       testimonials[currentTestimonial].classList.add('active');
-    }, 10000); // Change testimonial every 10 seconds
-
-    // Page load progress bar
-    document.onreadystatechange = function() {
-      if (document.readyState === "interactive") {
-        document.getElementById('loading-overlay').style.display = 'flex';
-        let progress = 0;
-
-        const interval = setInterval(function() {
-          progress += Math.random() * 5;
-          if (progress >= 100) {
-            progress = 100;
-          }
-          document.getElementById('progress-bar').style.width = progress + "%";
-          document.getElementById('percentage').textContent = Math.floor(progress) + "%";
-          
-          if (progress >= 100) {
-            clearInterval(interval);
-          }
-        }, 100);
-      }
-
-      window.onload = function() {
-        setTimeout(() => {
-          document.getElementById('loading-overlay').style.display = 'none';
-        }, 500);
-      };
-    }
+    }, 5000);
   </script>
 </body>
 </html>
