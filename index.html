@@ -128,25 +128,36 @@
       </div>
     </section>
     
-   <section id="contact" style="display: none;">
-  <h2>Contact Us</h2>
-  <form action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto;">
-    <input type="hidden" name="access_key" value="your-access-key-here" />
-    <div>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
-    </div>
-    <div>
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required />
-    </div>
-    <div>
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+  <section id="contact" style="display: none; padding: 20px; max-width: 800px; margin: 20px auto; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; color: #0400ff;">Contact Us</h2>
+    <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="hidden" name="access_key" value="your-access-key-here">
+
+      <!-- Name Field -->
+      <div style="display: flex; flex-direction: column;">
+        <label for="name" style="font-weight: bold; margin-bottom: 5px;">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+      </div>
+
+      <!-- Email Field -->
+      <div style="display: flex; flex-direction: column;">
+        <label for="email" style="font-weight: bold; margin-bottom: 5px;">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+      </div>
+
+      <!-- Message Field -->
+      <div style="display: flex; flex-direction: column;">
+        <label for="message" style="font-weight: bold; margin-bottom: 5px;">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" style="align-self: center; padding: 10px 20px; border: none; border-radius: 20px; background: linear-gradient(30deg, #0400ff, #4ce3f7); color: white; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
+        Submit
+      </button>
+    </form>
   </section>
+
   </main>
   
   <footer>
