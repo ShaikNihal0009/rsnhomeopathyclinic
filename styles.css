@@ -191,6 +191,7 @@ nav ul li a:hover {
 }
 
 /* Footer Styles */
+/*
 footer {
   background-color: #333;
   color: white;
@@ -200,7 +201,7 @@ footer {
   width: 100%;
   bottom: 0;
 }
-
+*/
 /* Loading Overlay */
 #loading-overlay {
   position: fixed;
