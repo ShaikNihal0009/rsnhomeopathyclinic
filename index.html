@@ -136,7 +136,7 @@
       </div>
     <form action="https://api.web3forms.com/submit" method="POST" id="form" style="display: flex; flex-direction: column; gap: 15px;">
       <input type="hidden" name="redirect" value="https://web3forms.com/success">
-      <input type="hidden" name="access_key" value="value">
+      <input type="hidden" name="access_key" value="791e662e-1b57-480d-87dc-e57de6865e36">
 
       <!-- Name Field -->
       <div style="display: flex; flex-direction: column;">
@@ -288,45 +288,10 @@ window.addEventListener('scroll', () => {
     window.removeEventListener('scroll', arguments.callee); // Remove event listener after starting
   }
 });
-    // submit form code
-const form = document.getElementById('form');
-const result = document.getElementById('result');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  result.innerHTML = "Please wait..."
-
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                result.innerHTML = json.message;
-            } else {
-                console.log(response);
-                result.innerHTML = json.message;
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-        })
-        .then(function() {
-            form.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 3000);
-        });
-});
+  window.onload = function() {
+        // Reset the form fields when the page loads
+        document.getElementById("form").reset();
+    };
 
   </script>
 </body>
