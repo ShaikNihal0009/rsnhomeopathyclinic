@@ -195,6 +195,9 @@
       section.style.display = section.id === sectionId || (sectionId === 'contact' && section.id === 'social-media') ? 'block' : 'none';
     });
   }
+     document.addEventListener('DOMContentLoaded', () => {
+    showSection('home');
+  });
   function showContactOption(option) {
       // Hide all contact details
       document.querySelectorAll('.contact-detail').forEach(detail => detail.style.display = 'none');
