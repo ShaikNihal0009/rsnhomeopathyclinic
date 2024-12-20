@@ -189,11 +189,12 @@
   </footer>
 
   <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => section.style.display = 'none');
-      document.getElementById(sectionId).style.display = 'block';
-    }
+     function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.style.display = section.id === sectionId || (sectionId === 'contact' && section.id === 'social-media') ? 'block' : 'none';
+    });
+  }
   function showContactOption(option) {
       // Hide all contact details
       document.querySelectorAll('.contact-detail').forEach(detail => detail.style.display = 'none');
